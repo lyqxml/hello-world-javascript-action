@@ -1,1 +1,9 @@
-
+name: 启动云端终端
+on: [push, workflow_dispatch]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: 开启 SSH 交互式终端
+        uses: mxschmitt/action-tmate@v3
